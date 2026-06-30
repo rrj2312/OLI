@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 40% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* PRIMARY - TEAL (#14a09d) */
+    --primary: 179 78% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* SECONDARY - GREEN (#74b72a) */
+    --secondary: 89 63% 44%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 180 25% 93%;
+    --muted-foreground: 215 19% 35%;
+
+    --accent: 56 90% 92%;
+    --accent-foreground: 56 80% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 20% 88%;
+    --input: 180 20% 88%;
+    --ring: 179 78% 35%;
+
+    --radius: 0.75rem;
+
+    /* utility colors - Saint-Saulve palette */
+    --amber: 56 99% 49%;   /* #f7e501 */
+    --green: 89 63% 44%;   /* #74b72a */
+    --red: 0 84% 60%;
+    --lime: 62 100% 43%;   /* #d5db00 */
+
+    /* glass shadows - teal/green tinted glow */
+    --shadow-blue: 0 8px 32px rgba(20, 160, 157, 0.18);
+    --shadow-blue-hover: 0 8px 36px rgba(20, 160, 157, 0.28);
+
+    --shadow-green: 0 8px 32px rgba(116, 183, 42, 0.18);
+    --shadow-green-hover: 0 8px 36px rgba(116, 183, 42, 0.28);
+
+    /* sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 40% 15%;
+    --sidebar-primary: 179 78% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 25% 93%;
+    --sidebar-accent-foreground: 222 40% 15%;
+    --sidebar-border: 180 20% 88%;
+    --sidebar-ring: 179 78% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-sans;
+    background:
+      radial-gradient(at 12% 18%, hsla(179, 78%, 55%, 0.35) 0px, transparent 50%),
+      radial-gradient(at 85% 12%, hsla(56, 99%, 60%, 0.30) 0px, transparent 50%),
+      radial-gradient(at 50% 65%, hsla(89, 63%, 50%, 0.28) 0px, transparent 50%),
+      radial-gradient(at 90% 90%, hsla(62, 100%, 50%, 0.22) 0px, transparent 50%),
+      hsl(var(--background));
+    background-attachment: fixed;
+    background-size: 200% 200%;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism core utilities */
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-xl border border-white/60;
+  }
+
+  .glass-card {
+    @apply bg-white/50 backdrop-blur-lg border border-white/60 transition-all duration-200;
+  }
+
+  .glass-nav {
+    @apply bg-white/30 backdrop-blur-xl border-b border-white/40;
+  }
+
+  .glass-input {
+    @apply bg-white/40 backdrop-blur-md border border-white/60;
+  }
+}

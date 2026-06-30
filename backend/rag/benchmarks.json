@@ -1,0 +1,102 @@
+[
+  {
+    "id": "biochar_co2_001",
+    "technology": "biochar",
+    "metric": "CO2_capture",
+    "min": 1500,
+    "max": 3500,
+    "unit": "kg/tonne_biochar",
+    "source": "Woolf et al. 2010, Nature Communications",
+    "notes": "Range depends on feedstock and soil type in tropical conditions"
+  },
+  {
+    "id": "enhanced_weathering_001",
+    "technology": "enhanced_weathering",
+    "metric": "CO2_capture",
+    "min": 200,
+    "max": 400,
+    "unit": "kg/hectare/year",
+    "source": "Beerling et al. 2022, Nature Climate Change",
+    "notes": "Basalt application on agricultural land, India conditions"
+  },
+  {
+    "id": "solar_co2_001",
+    "technology": "solar_pv",
+    "metric": "CO2_avoided",
+    "min": 700,
+    "max": 820,
+    "unit": "g/kWh",
+    "source": "MNRE Annual Report 2023",
+    "notes": "Indian grid emission factor"
+  },
+  {
+    "id": "biochar_cost_001",
+    "technology": "biochar",
+    "metric": "cost",
+    "min": 3000,
+    "max": 8000,
+    "unit": "INR/tonne_CO2",
+    "source": "TERI India Climate Report 2023",
+    "notes": "Production and application cost range, India"
+  },
+  {
+    "id": "green_hydrogen_co2_001",
+    "technology": "green_hydrogen",
+    "metric": "CO2_avoided",
+    "min": 8,
+    "max": 10,
+    "unit": "kg/kg_hydrogen",
+    "source": "IEA Hydrogen Report 2023",
+    "notes": "Comparison against grey hydrogen via electrolysis"
+  },
+  {
+    "id": "wind_co2_001",
+    "technology": "wind",
+    "metric": "CO2_avoided",
+    "min": 600,
+    "max": 750,
+    "unit": "g/kWh",
+    "source": "MNRE Annual Report 2023",
+    "notes": "Onshore small/medium turbine displacement of diesel"
+  },
+  {
+    "id": "biochar_trl_001",
+    "technology": "biochar",
+    "metric": "TRL",
+    "min": 6,
+    "max": 9,
+    "unit": "TRL_scale",
+    "source": "EU Horizon TRL Framework",
+    "notes": "Commercial-stage biochar production is well-established globally"
+  },
+  {
+    "id": "ocean_plastic_co2_001",
+    "technology": "plastic_to_fuel",
+    "metric": "CO2_avoided",
+    "min": 800,
+    "max": 1400,
+    "unit": "kg/tonne_plastic",
+    "source": "UNEP Plastic-to-Fuel Lifecycle Assessment 2022",
+    "notes": "Via displacement of virgin diesel production"
+  },
+  {
+    "id": "atm_carbon_capture_001",
+    "technology": "direct_air_capture",
+    "metric": "CO2_capture",
+    "min": 1,
+    "max": 4000,
+    "unit": "tonnes/unit/year",
+    "source": "IPCC AR6 WG3 Chapter 12",
+    "notes": "Commercial DAC units range from pilot (tonnes) to large plants (thousands of tonnes); claims above this require independent third-party verification"
+  },
+  {
+    "id": "pm_kusum_subsidy_001",
+    "technology": "solar_pv",
+    "metric": "subsidy_dependency",
+    "min": 0,
+    "max": 30,
+    "unit": "percent_revenue",
+    "source": "MNRE PM-KUSUM Scheme Guidelines",
+    "notes": "Subsidy-linked revenue beyond 30% increases policy withdrawal risk significantly"
+  }
+]
