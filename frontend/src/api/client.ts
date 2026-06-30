@@ -1,4 +1,4 @@
-const BASE = "https://oli-a1ox.onrender.com";
+const BASE = "https://oli-a1ox.onrender.com/api";
 
 export async function submitAudit(projectText) {
   const res = await fetch(`${BASE}/audit/`, {
