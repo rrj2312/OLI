@@ -1,7 +1,7 @@
 fastapi
 uvicorn[standard]
 groq
-chromadb
+supabase
 sentence-transformers
 numpy
 scikit-learn

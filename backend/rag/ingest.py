@@ -1,22 +1,36 @@
-import chromadb
+import os
 import json
+from supabase import create_client
 from sentence_transformers import SentenceTransformer
+from dotenv import load_dotenv
 
-client = chromadb.PersistentClient(path="./chroma_data")
-collection = client.get_or_create_collection("oli_benchmarks")
+load_dotenv()
+
+supabase = create_client(
+    os.environ.get("SUPABASE_URL"),
+    os.environ.get("SUPABASE_KEY"),
+)
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
 with open("benchmarks.json") as f:
     benchmarks = json.load(f)
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+for b in benchmarks:
+    content = f"{b['technology']} {b['metric']}: {b['min']} to {b['max']} {b['unit']}. {b['notes']}. Source: {b['source']}"
+    embedding = model.encode(content).tolist()
 
-collection.add(
-    ids=[b["id"] for b in benchmarks],
-    documents=[
-        f"{b['technology']} {b['metric']}: {b['min']} to {b['max']} {b['unit']}. {b['notes']}. Source: {b['source']}"
-        for b in benchmarks
-    ],
-    metadatas=benchmarks,
-)
+    supabase.table("benchmarks").upsert({
+        "id": b["id"],
+        "technology": b["technology"],
+        "metric": b["metric"],
+        "min_value": b["min"],
+        "max_value": b["max"],
+        "unit": b["unit"],
+        "source": b["source"],
+        "notes": b["notes"],
+        "content": content,
+        "embedding": embedding,
+    }).execute()
 
-print(f"Ingested {len(benchmarks)} benchmarks into ChromaDB for OLI")
+print(f"Ingested {len(benchmarks)} benchmarks into Supabase for OLI")

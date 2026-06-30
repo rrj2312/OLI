@@ -13,8 +13,7 @@ node_modules/
 dist/
 .vite/
 
-# ChromaDB (no longer used, but just in case)
-chroma_data/
+
 
 # OS
 .DS_Store
