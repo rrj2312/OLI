@@ -3,8 +3,9 @@ uvicorn[standard]
 groq
 supabase
 sentence-transformers
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
 numpy
 scikit-learn
-xgboost
 python-dotenv
 pydantic
